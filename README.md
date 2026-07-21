@@ -8,9 +8,18 @@ Ubuntu 26.04 ships with GCC 15 and Python 3.14. However, ROS 2 Humble strictly r
 ## Fix
 Instead of relying on `apt` or Docker, we utilize **RoboStack** and **Micromamba** to provision an isolated, native-feeling ROS 2 Humble environment directly in the user directory.
 
-## Usage
-Run `source setup.sh` to initialize the ROS 2 environment for your shell.
+## Automated Installation (For Fresh Installs)
+If you are running a fresh Ubuntu 26 system, simply clone this repository and run the installation script. This script will automatically download Micromamba, create an isolated ROS 2 environment, download PX4, compile the firmware and ROS workspaces, and automatically patch the QGroundControl AppImage to prevent segmentation faults.
 
-**Building PX4 SITL with Gazebo:**
-Because Ubuntu 26 natively lacks the exact Gazebo simulation dependencies required by PX4, this conda environment also packs `gz-sim`, `gz-sensors`, `Protobuf` and other Gazebo components. 
-You must run your `make px4_sitl gz_advanced_plane` commands **from within this activated environment** so CMake can find the dependencies!
+```bash
+cd px4_fix
+chmod +x install.sh
+./install.sh
+```
+
+## Daily Usage
+Once installed, you must activate the environment in every new terminal before running PX4 or ROS commands:
+```bash
+px4_env
+```
+*(This uses the alias automatically added to your `~/.bashrc` during installation).*
