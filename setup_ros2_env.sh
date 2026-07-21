@@ -14,3 +14,4 @@ fi
 alias colcon="colcon build --cmake-args -DPython3_EXECUTABLE=\$(which python3) -DPython3_INCLUDE_DIR=\$CONDA_PREFIX/include/python3.12 -DPython_EXECUTABLE=\$(which python3) -DPython_INCLUDE_DIR=\$CONDA_PREFIX/include/python3.12"
 
 echo "ROS 2 Humble (via Micromamba) activated successfully."
+echo "Note: Run 'make px4_sitl' for PX4 from within this environment to correctly find Gazebo simulator dependencies!"
