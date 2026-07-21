@@ -15,7 +15,7 @@ If you are setting up a completely fresh Ubuntu 26 system, simply open a termina
 
 ```bash
 # 1. Clone this repository
-git clone https://github.com/MoKaraca/px4-ros2-ubuntu26-fixes.git px4_fix
+git clone https://github.com/MoKaraca/PX4-Ubuntu-26.04-Enviroment.git px4_fix
 
 # 2. Enter the directory and make the script executable
 cd px4_fix
