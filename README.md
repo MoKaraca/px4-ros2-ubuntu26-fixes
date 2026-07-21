@@ -9,7 +9,7 @@ Ubuntu 26.04 ships with GCC 15 and Python 3.14. However, ROS 2 Humble strictly r
 Instead of relying on `apt` or Docker, we utilize **RoboStack** and **Micromamba** to provision an isolated, native-feeling ROS 2 Humble environment directly in the user directory.
 
 ## Usage
-Run `source setup_ros2_env.sh` to initialize the ROS 2 environment for your shell.
+Run `source setup.sh` to initialize the ROS 2 environment for your shell.
 
 **Building PX4 SITL with Gazebo:**
 Because Ubuntu 26 natively lacks the exact Gazebo simulation dependencies required by PX4, this conda environment also packs `gz-sim`, `gz-sensors`, `Protobuf` and other Gazebo components. 
