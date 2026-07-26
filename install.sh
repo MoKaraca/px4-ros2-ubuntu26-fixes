@@ -27,13 +27,17 @@ echo ">>> Creating 'ros2_humble' environment..."
 # Loop to retry downloading in case of network timeouts
 until micromamba create -n ros2_humble -c robostack-staging -c conda-forge \
     ros-humble-desktop colcon-common-extensions compilers cmake ninja \
-    gz-sim gz-sensors gz-plugin gz-transport libprotobuf openjdk -y; do
+    gz-sim gz-sensors gz-plugin gz-transport libprotobuf openjdk \
+    pyside6 qt6-webengine -y; do
     echo "Retrying micromamba install due to potential network timeout..."
     sleep 2
 done
 
 # Activate environment for the rest of the script
 micromamba activate ros2_humble
+
+echo ">>> Installing pip dependencies (YOLO/ultralytics)..."
+pip install ultralytics
 
 # 4. Clone and Build PX4
 echo ">>> Setting up PX4-Autopilot..."
